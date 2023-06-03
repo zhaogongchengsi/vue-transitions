@@ -1,0 +1,25 @@
+{
+  "name": "@zrook/transitions",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "transitions"
+  ],
+  "files": [
+    "index.css",
+    "right-left.css"
+  ],
+  "exports": {
+    ".": "./index.css",
+    "./right-left": "./right-left.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^5.1.3"
+  }
+}

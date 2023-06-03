@@ -1,0 +1,9 @@
+.zrook-enter-active,
+.zrook-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.zrook-enter-from,
+.zrook-leave-to {
+  opacity: 0;
+}
