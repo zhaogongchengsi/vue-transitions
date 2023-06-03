@@ -67,6 +67,9 @@ importers:
       '@iconify-json/carbon':
         specifier: ^1.1.16
         version: 1.1.16
+      '@iconify-json/tabler':
+        specifier: ^1.1.78
+        version: 1.1.78
       '@intlify/unplugin-vue-i18n':
         specifier: ^0.10.0
         version: 0.10.0(rollup@2.79.1)(vue-i18n@9.2.2)
@@ -1819,6 +1822,12 @@ packages:
 
   /@iconify-json/carbon@1.1.16:
     resolution: {integrity: sha512-AD8bcnRSGA0WfcGEass2FbA0sagrUzrpFx5WchuDy3uf7yKBWumdypdQK121DH321fQDl5+zZQ26T6gC9knwUQ==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
+  /@iconify-json/tabler@1.1.78:
+    resolution: {integrity: sha512-WNnRObt9TQ395xjfs9MhTx6YvCKv+S3i1GI22T8OQCkDRmQEdFLqgZgTvfaqcZiR/gRD/jBeTGjEtT3Iiex2Wg==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true

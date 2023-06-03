@@ -15,4 +15,7 @@ defineOptions({
 <route lang="yaml">
 meta:
   layout: home
+  title: 首页
+  icon: i-tabler-home-dot
+  isMenu: true
 </route>
