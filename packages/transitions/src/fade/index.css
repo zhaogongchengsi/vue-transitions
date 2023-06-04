@@ -1,9 +1,14 @@
-.enter-active,
-.leave-active {
-  transition: opacity 0.5s ease;
+
+@import "../config.css";
+
+.enter-active, .leave-active {
+  transition: transform var(--zrook-transition-duration) var(--zrook-transition-function);
 }
 
-.enter-from,
+.enter-from {
+  transform: translateX(-100%);
+}
+
 .leave-to {
-  opacity: 0;
+  transform: translateX(100%);
 }

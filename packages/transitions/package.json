@@ -1,11 +1,20 @@
 {
   "name": "@zrook/transitions",
-  "version": "0.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.1",
+  "description": "This is a library for animation switching with vue3 Transition api",
+  "author": "zhaogongchengsi <zzhhaon@163.com>",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/zhaogongchengsi",
+  "homepage": "https://github.com/zhaogongchengsi/vue-transitions",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhaogongchengsi/vue-transitions.git"
+  },
+  "bugs": "https://github.com/zhaogongchengsi/vue-transitions/issues",
   "scripts": {
     "dev": "postcss src/index.css src/**/*.css -w --base src --dir dist",
-    "build": "postcss src/index.css src/**/*.css --base src --dir dist"
+    "build": "postcss src/index.css src/**/*.css --base src --dir dist",
+    "publish": "npm publish --access public"
   },
   "keywords": [
     "transitions"
@@ -17,8 +26,6 @@
     ".": "./dist/index.css",
     "./fade": "./dist/fade/index.css"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.4.14",
     "cssnano": "^6.0.1",
