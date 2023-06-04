@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "postcss src/**/*.css -w --base src --dir dist",
+    "build": "postcss src/**/*.css --base src --dir dist"
   },
   "keywords": [
     "transitions"
@@ -14,12 +15,15 @@
     "right-left.css"
   ],
   "exports": {
-    ".": "./index.css",
-    "./right-left": "./right-left.css"
+    ".": "./dist"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "typescript": "^5.1.3"
+  },
+  "devDependencies": {
+    "postcss": "^8.4.24",
+    "postcss-cli": "^10.1.0"
   }
 }
