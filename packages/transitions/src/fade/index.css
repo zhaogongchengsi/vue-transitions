@@ -1,14 +1,3 @@
-
 @import "../config.css";
-
-.enter-active, .leave-active {
-  transition: transform var(--zrook-transition-duration) var(--zrook-transition-function);
-}
-
-.enter-from {
-  transform: translateX(-100%);
-}
-
-.leave-to {
-  transform: translateX(100%);
-}
+@import "fade-x.css";
+@import "fade-y.css";

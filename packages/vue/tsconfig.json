@@ -14,10 +14,7 @@
     "noUnusedLocals": true,
     "strictNullChecks": true,
     "allowJs": true,
-    "forceConsistentCasingInFileNames": true,
-    "paths": {
-      "~/*": ["src/*"],
-    }
+    "forceConsistentCasingInFileNames": true
   },
   "exclude": ["dist", "node_modules", "cypress"]
 }

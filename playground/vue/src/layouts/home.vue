@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 // import { availableLocales, loadLanguageAsync } from '~/modules/i18n'
 
-// const { t, locale } = useI18n()
+const { t } = useI18n()
 
 // async function toggleLocales() {
 //   // change to some real logic
@@ -15,8 +15,8 @@
 const router = useRouter()
 const menus = computed(() => {
   const routers = router.getRoutes()
-  const cache = []
-  const menus: { title: string; icon?: string }[] = routers.map((router) => {
+  const cache: string[] = []
+  const menus: { title: string; icon?: string, path: string }[] = routers.map((router) => {
     if (!router.meta || !router.meta.isMenu || cache.includes(router.path))
       return null
 
@@ -32,7 +32,7 @@ const menus = computed(() => {
 
 <template>
   <div class="h-screen w-full flex">
-    <div class="h-screen w-50 flex flex-col border-r-1 border-black/30 dark:border-white/40">
+    <div class="h-screen w-70 flex flex-col border-r-1 border-black/30 dark:border-white/40">
       <div class="flex items-center border-b-1 border-black/30 p-3 dark:border-white/40">
         <button icon-btn :title="t('button.toggle_dark')" @click="toggleDark()">
           <div i="carbon-sun dark:carbon-moon" />

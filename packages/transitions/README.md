@@ -22,6 +22,12 @@ const show = ref(false)
 </template>
 ```
 
+### Animation class name
+
+Default prefix is zrook
+
+1. `fade-x` `fade-x-reverse`
+
 ### ! Welcome to contribute your interesting
 
 More [Transition](https://vuejs.org/guide/built-ins/transition.html#the-transition-component)

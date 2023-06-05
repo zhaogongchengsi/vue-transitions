@@ -1,5 +1,5 @@
-import RightLeft from './RightLeft.vue'
+import Fade from './components/Fade.vue'
 
 export {
-  RightLeft,
+  Fade,
 }

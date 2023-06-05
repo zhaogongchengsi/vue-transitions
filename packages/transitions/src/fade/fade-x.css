@@ -1,0 +1,24 @@
+.fade-x-enter-active, .fade-x-leave-active {
+  transition: transform var(--zrook-transition-duration) var(--zrook-transition-function);
+}
+
+.fade-x-enter-from {
+  transform: translateX(-100%);
+}
+
+.fade-x-leave-to {
+  transform: translateX(100%);
+}
+
+/* reverse */
+.fade-x-reverse-enter-active, .fade-x-reverse-leave-active {
+  transition: transform var(--zrook-transition-duration) var(--zrook-transition-function);
+}
+
+.fade-x-reverse-enter-from {
+  transform: translateX(100%);
+}
+
+.fade-x-reverse-leave-to {
+  transform: translateX(-100%);
+}
