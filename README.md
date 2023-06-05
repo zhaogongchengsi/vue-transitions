@@ -2,5 +2,5 @@
 
 
 ### packages
-[@zrook/transitions](./packages/transitions/README.md)
-[@zrook/vue-transitions](./packages/vue/README.md)
+- [@zrook/transitions](./packages/transitions/README.md)
+- [@zrook/vue-transitions](./packages/vue/README.md)
