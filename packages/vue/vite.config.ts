@@ -4,7 +4,7 @@ import vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
 import fg from 'fast-glob'
 
-export default defineConfig(async ({ mode }) => {
+export default defineConfig(async () => {
   const components = (await fg(['src/components/**/index.ts'], { dot: true, cwd: process.cwd() })).map(file => join(process.cwd(), file))
 
   const entries: Record<string, string> = {}
@@ -15,21 +15,20 @@ export default defineConfig(async ({ mode }) => {
 
   return {
     build: {
+      target: 'modules',
+      outDir: 'dist',
+      emptyOutDir: false,
+      sourcemap: true,
+      minify: false,
+      brotliSize: false,
       lib: {
         entry: {
           index: resolve(__dirname, 'src/index.ts'),
           ...entries,
         },
         name: 'VueTransitions',
-        fileName: (format: string, entryName: string) => {
-          let ext = 'js'
-          if (format === 'es')
-            ext = 'mjs'
-
-          if (format === 'cjs')
-            ext = 'cjs'
-
-          return `${entryName}.${ext}`
+        fileName: (_, entryName: string) => {
+          return `${entryName}.js`
         },
         formats: ['es'],
       },
@@ -43,7 +42,6 @@ export default defineConfig(async ({ mode }) => {
           },
         },
       },
-      watch: mode === 'development' ? {} : null,
     },
 
     plugins: [

@@ -1,34 +1,49 @@
 {
   "name": "@zrook/vue-transitions",
-  "version": "0.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.1",
+  "description": "Vue transition animation library",
+  "main": "dist/index.js",
   "scripts": {
+    "prepublishOnly": "npm run build",
     "build": "vite build",
-    "dev": "vite dev"
+    "release": "npm publish --access public"
+  },
+  "author": "zhaogongchengsi <zzhhaon@163.com>",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/zhaogongchengsi",
+  "homepage": "https://github.com/zhaogongchengsi/vue-transitions",
+  "bugs": "https://github.com/zhaogongchengsi/vue-transitions/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhaogongchengsi/vue-transitions.git"
   },
   "keywords": [
-    "vue-transitions"
+    "vue-transitions",
+    "vue",
+    "transition",
+    "animation"
   ],
   "files": [
     "dist"
   ],
   "exports": {
-    ".": "./dist/index.mjs",
+    ".": "./dist/index.js",
     "./style": "./dist/style.css",
-    "./fade": "./dist/fade.mjs"
+    "./fade": "./dist/fade.js"
   },
-  "author": "",
-  "license": "ISC",
+  "sideEffects": [
+    "dist/*",
+    "*.css"
+  ],
   "dependencies": {
-    "@zrook/transitions": "workspace:^",
-    "typescript": "^5.1.3",
-    "vite": "^4.3.9",
-    "vue": "^3.3.4"
+    "@zrook/transitions": "workspace:^"
   },
   "devDependencies": {
     "esno": "^0.16.3",
     "fast-glob": "^3.2.12",
-    "unplugin-vue-components": "^0.25.0"
+    "unplugin-vue-components": "^0.25.0",
+    "typescript": "^5.1.3",
+    "vite": "^4.3.9",
+    "vue": "^3.3.4"
   }
 }

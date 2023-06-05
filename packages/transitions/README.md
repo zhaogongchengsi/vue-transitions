@@ -2,6 +2,8 @@
 
 This is a library for animation switching with vue3 Transition api
 
+[![NPM version](https://img.shields.io/npm/v/@zrook/transitions?color=a1b858&label=)](https://www.npmjs.com/package/@zrook/transitions)
+
 ## Use
 
 
