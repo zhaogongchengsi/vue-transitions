@@ -1,9 +1,11 @@
 import type { App, DefineComponent } from 'vue'
 
-export function CreateVueTransitionsPlugin(app: App, components: DefineComponent[]) {
+export function CreateVueTransitionsPlugin(components: DefineComponent[]) {
   return {
-    install() {
-
+    install(app: App) {
+      components.forEach((component) => {
+        app.component(component.name, component)
+      })
     },
   }
 }

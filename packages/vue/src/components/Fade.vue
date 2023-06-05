@@ -5,16 +5,20 @@ import type { Transition } from '../types/index'
 import { transitionConfig } from './config'
 import ZrookTransition from './ZrookTransition.vue'
 
-interface FadeProps extends Transition {
-  direction?: 'x' | 'y'
-  reverse?: boolean
-}
-
 const props = withDefaults(defineProps<FadeProps>(), {
   direction: 'x',
   reverse: false,
   ...transitionConfig,
 })
+
+defineOptions({
+  name: 'Fade',
+})
+
+interface FadeProps extends Transition {
+  direction?: 'x' | 'y'
+  reverse?: boolean
+}
 
 const name = computed(() => {
   return `fade-${props.direction}`
