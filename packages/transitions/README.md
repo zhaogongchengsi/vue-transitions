@@ -26,7 +26,7 @@ const show = ref(false)
 
 Default prefix is zrook
 
-1. `fade-x` `fade-x-reverse`
+1. `fade-x` `fade-x-reverse` `fade-y` `fade-y-reverse`
 
 ### ! Welcome to contribute your interesting
 

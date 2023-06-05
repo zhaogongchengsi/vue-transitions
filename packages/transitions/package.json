@@ -1,6 +1,6 @@
 {
   "name": "@zrook/transitions",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "This is a library for animation switching with vue3 Transition api",
   "author": "zhaogongchengsi <zzhhaon@163.com>",
   "license": "MIT",
@@ -14,7 +14,7 @@
   "scripts": {
     "dev": "postcss src/index.css src/**/*.css -w --base src --dir dist",
     "build": "postcss src/index.css src/**/*.css --base src --dir dist",
-    "publish": "npm publish --access public"
+    "pub": "npm publish --access public"
   },
   "keywords": [
     "transitions"
