@@ -22,8 +22,9 @@ export default defineConfig({
   resolve: {
     alias: {
       '~/': `${path.resolve(__dirname, 'src')}/`,
-      '@zrook/vue-transitions': path.resolve(__dirname, '../../packages/vue/src/index.ts'),
-      '@zrook/vue-transitions/': path.resolve(__dirname, '../../packages/vue/src/'),
+      // '@zrook/vue-transitions': path.resolve(__dirname, '../../packages/vue/src/index.ts'),
+      // '@zrook/vue-transitions/': path.resolve(__dirname, '../../packages/vue/src/'),
+      // 'transitions/dist/': path.resolve(__dirname, '../../packages/vue/dist/'),
     },
   },
 

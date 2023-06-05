@@ -1,4 +1,4 @@
-import Fade from './components/Fade.vue'
+import Fade from './components/fade/index'
 
 // import { CreateVueTransitionsPlugin } from './plugin'
 

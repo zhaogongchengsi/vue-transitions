@@ -1,7 +1,7 @@
 <script setup lang='ts'>
 import { computed } from 'vue'
 import type { Transition } from '../types/index'
-import { transitionConfig } from './config'
+import { transitionConfig } from './utils'
 
 interface FadeProps extends Transition {
   name: string
