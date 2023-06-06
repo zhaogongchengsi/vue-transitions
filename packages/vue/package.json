@@ -2,10 +2,10 @@
   "name": "@zrook/vue-transitions",
   "version": "0.0.1",
   "description": "Vue transition animation library",
-  "main": "dist/index.js",
+  "main": "dist/es/index.mjs",
   "scripts": {
     "prepublishOnly": "npm run build",
-    "build": "vite build",
+    "build": "vite build && esno ./scripts/copy.ts",
     "release": "npm publish --access public"
   },
   "author": "zhaogongchengsi <zzhhaon@163.com>",
@@ -26,10 +26,17 @@
   "files": [
     "dist"
   ],
+  "types": "./dist/types/index.ts",
   "exports": {
-    ".": "./dist/index.js",
-    "./style": "./dist/style.css",
-    "./fade": "./dist/fade.js"
+    "./style": "./dist/es/style.css",
+    ".": {
+      "require": "./dist/lib/index.mjs",
+      "import": "./dist/es/index.mjs"
+    },
+    "./fade": {
+      "require": "./dist/lib/fade.js",
+      "import": "./dist/es/fade.mjs"
+    }
   },
   "sideEffects": [
     "dist/*",
@@ -39,11 +46,14 @@
     "@zrook/transitions": "workspace:^"
   },
   "devDependencies": {
+    "@types/fs-extra": "^11.0.1",
     "esno": "^0.16.3",
     "fast-glob": "^3.2.12",
-    "unplugin-vue-components": "^0.25.0",
+    "fs-extra": "^11.1.1",
     "typescript": "^5.1.3",
+    "unplugin-vue-components": "^0.25.0",
     "vite": "^4.3.9",
+    "vite-plugin-dts": "^2.3.0",
     "vue": "^3.3.4"
   }
 }
