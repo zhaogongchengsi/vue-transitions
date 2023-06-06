@@ -25,7 +25,8 @@
   ],
   "exports": {
     ".": "./dist/index.css",
-    "./fade": "./dist/fade/index.css"
+    "./fade": "./dist/fade/index.css",
+    "./move": "./dist/move/index.css"
   },
   "sideEffects": [
     "*.css"
@@ -33,7 +34,9 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
     "autoprefixer": "^10.4.14",
+    "consola": "^3.1.0",
     "cssnano": "^6.0.1",
+    "esno": "^0.16.3",
     "postcss": "^8.4.24",
     "postcss-cli": "^10.1.0",
     "postcss-easy-import": "^4.0.0",

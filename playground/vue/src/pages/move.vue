@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Fade } from '@zrook/vue-transitions'
+import { Move } from '@zrook/vue-transitions'
 
 defineOptions({
   name: 'IndexPage',
@@ -15,11 +15,11 @@ const isShow = ref(false)
     </button>
     <div class="flex flex-col items-center gap-5">
       <span> {{ isShow ? '出现' : '消失' }} </span>
-      <Fade>
+      <Move direction="x">
         <div v-if="isShow" class="h-50 w-50 bg-red">
           测试小方块
         </div>
-      </Fade>
+      </Move>
     </div>
   </div>
 </template>
@@ -27,7 +27,7 @@ const isShow = ref(false)
 <route lang="yaml">
 meta:
   layout: home
-  title: Fade
+  title: Move
   icon: i-tabler-home-dot
   isMenu: true
   transition: Fade

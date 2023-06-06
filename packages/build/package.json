@@ -1,0 +1,23 @@
+{
+  "name": "build",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    "prepublishOnly": "npm run build",
+    "start": "esno src/index.ts"
+  },
+  "bin": {
+    "vt": "./bin/index.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "citty": "^0.1.1",
+    "consola": "^3.1.0",
+    "unbuild": "^1.2.1"
+  }
+}

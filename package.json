@@ -5,9 +5,14 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "pnpm --filter=!@zrook/vue-transitions dev"
+    "prepublishOnly": "npm run build",
+    "dev": "pnpm --filter=!@zrook/vue-transitions dev",
+    "build": "vt build -n *"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "build": "link:F:/zzh-projects/vue-transitions/packages/build"
+  }
 }

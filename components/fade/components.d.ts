@@ -9,9 +9,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    Fade: typeof import('./src/components/fade/Fade.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    ZrookTransition: typeof import('./src/components/ZrookTransition.vue')['default']
   }
 }

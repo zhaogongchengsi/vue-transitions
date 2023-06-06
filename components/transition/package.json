@@ -1,0 +1,24 @@
+{
+  "name": "@zrook/vue-base-transition",
+  "version": "0.0.0",
+  "private": "true",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "vt build -v ./vite.config.ts"
+  },
+  "exports": {
+    "require": "./dist/es/index.mjs",
+    "import": "./dist/lib/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "consola": "^3.1.0",
+    "esno": "^0.16.3"
+  }
+}

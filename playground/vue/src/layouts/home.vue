@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 // import { availableLocales, loadLanguageAsync } from '~/modules/i18n'
-
 const { t } = useI18n()
 
 // async function toggleLocales() {
@@ -16,6 +15,7 @@ const router = useRouter()
 const menus = computed(() => {
   const routers = router.getRoutes()
   const cache: string[] = []
+  // @ts-ignore
   const menus: { title: string; icon?: string, path: string }[] = routers.map((router) => {
     if (!router.meta || !router.meta.isMenu || cache.includes(router.path))
       return null

@@ -2,10 +2,9 @@
   "name": "@zrook/vue-transitions",
   "version": "0.0.1",
   "description": "Vue transition animation library",
-  "main": "dist/es/index.mjs",
+  "main": "dist/index.mjs",
   "scripts": {
     "prepublishOnly": "npm run build",
-    "build": "vite build && esno ./scripts/copy.ts",
     "release": "npm publish --access public"
   },
   "author": "zhaogongchengsi <zzhhaon@163.com>",
@@ -26,18 +25,6 @@
   "files": [
     "dist"
   ],
-  "types": "./dist/types/index.ts",
-  "exports": {
-    "./style": "./dist/es/style.css",
-    ".": {
-      "require": "./dist/lib/index.mjs",
-      "import": "./dist/es/index.mjs"
-    },
-    "./fade": {
-      "require": "./dist/lib/fade.js",
-      "import": "./dist/es/fade.mjs"
-    }
-  },
   "sideEffects": [
     "dist/*",
     "*.css"
@@ -47,6 +34,7 @@
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.1",
+    "consola": "^3.1.0",
     "esno": "^0.16.3",
     "fast-glob": "^3.2.12",
     "fs-extra": "^11.1.1",

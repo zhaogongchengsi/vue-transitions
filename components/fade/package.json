@@ -1,0 +1,20 @@
+{
+  "name": "@zrook/vue-transitions-fade",
+  "version": "0.0.0",
+  "private": "true",
+  "description": "",
+  "main": "./index.ts",
+  "scripts": {
+    "build": "vt build -v ./vite.config.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "consola": "^3.1.0",
+    "esno": "^0.16.3"
+  },
+  "dependencies": {
+    "@zrook/vue-base-transition": "workspace:^"
+  }
+}
