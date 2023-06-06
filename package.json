@@ -7,7 +7,7 @@
   "scripts": {
     "prepublishOnly": "npm run build",
     "dev": "pnpm --filter=!@zrook/vue-transitions dev",
-    "build": "vt build -n *"
+    "build": "vt build -n * -v vite.config.ts -o ./packages/vue/dist"
   },
   "keywords": [],
   "author": "",

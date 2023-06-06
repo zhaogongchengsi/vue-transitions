@@ -1,10 +1,10 @@
-import { dirname as dn, join } from 'node:path'
+import { join } from 'node:path'
 import { readFile } from 'node:fs/promises'
 import { normalizePath } from 'vite'
 
 export function dirname(path: string) {
-  const _dirname = normalizePath(dn(path))
-  return _dirname.slice(__dirname.lastIndexOf('/') + 1)
+  const _dirname = normalizePath(path)
+  return _dirname.slice(_dirname.lastIndexOf('/') + 1)
 }
 
 export async function createAlias(dirPath: string) {

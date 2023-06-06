@@ -1,4 +1,4 @@
 import Move from './Move.vue'
-import '@zrook/transitions/move'
+import './index.css'
 
 export default Move

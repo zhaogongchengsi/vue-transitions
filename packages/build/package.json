@@ -18,6 +18,19 @@
   "devDependencies": {
     "citty": "^0.1.1",
     "consola": "^3.1.0",
-    "unbuild": "^1.2.1"
+    "unbuild": "^1.2.1",
+    "unplugin-vue-macros": "^2.2.1",
+    "cssnano": "^6.0.1",
+    "esno": "^0.16.3",
+    "postcss": "^8.4.24",
+    "postcss-cli": "^10.1.0",
+    "postcss-easy-import": "^4.0.0",
+    "postcss-import": "^15.1.0",
+    "postcss-nested": "^6.0.1",
+    "postcss-nested-import": "^1.0.0",
+    "postcss-pseudo-is": "^0.3.0",
+    "postcss-selector-matches": "^4.0.0",
+    "postcss-selector-prefixer": "^1.0.2",
+    "postcss-utilities": "^0.8.4"
   }
 }

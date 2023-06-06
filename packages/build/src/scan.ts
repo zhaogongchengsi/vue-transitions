@@ -13,3 +13,7 @@ export async function scan(root: string = process.cwd()) {
   })
   return packages
 }
+
+export async function scanDirs(root: string = process.cwd()) {
+  return fg(['components/*'], { cwd: root, deep: 1, ignore: ['!**/node_modules/**'], absolute: true, onlyDirectories: true })
+}
