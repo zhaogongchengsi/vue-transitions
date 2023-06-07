@@ -1,6 +1,7 @@
 #! env node
 import { defineCommand, runMain } from 'citty'
 import { build } from './commands/build'
+import { dev } from './commands/dev'
 
 const main = defineCommand({
   meta: {
@@ -10,6 +11,7 @@ const main = defineCommand({
   },
   subCommands: {
     build,
+    dev,
   },
 })
 

@@ -27,9 +27,7 @@
     ],
     "paths": {
       "~/*": ["src/*"],
-      "@zrook/vue-transitions": ["../../packages/vue/src/index.ts"],
-      "@zrook/vue-transitions/*": ["../../packages/vue/src/*"],
-      "transitions/dist/*": ["../../packages/vue/dist/*"]
+      "@zrook/transitions/*": ["../../components/*"],
     }
   },
   "vueCompilerOptions": {

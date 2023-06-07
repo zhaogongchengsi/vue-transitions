@@ -3,17 +3,34 @@
   "version": "0.0.0",
   "private": "true",
   "description": "",
-  "main": "./index.ts",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
   "scripts": {
-    "build": "vt build -v ./vite.config.ts"
+    "build": "vt build -v ./vite.config.ts",
+    "dev": "vt dev -v ./vite.config.ts"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import":"./dist/index.mjs",
+      "default":"./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./style": "./dist/style.css"
+  },
+  "license": "MIT",
   "devDependencies": {
     "consola": "^3.1.0",
     "esno": "^0.16.3"
   },
+  "sideEffects": [
+    "dist/*",
+    "*.css"
+  ],
   "dependencies": {
     "@zrook/vue-base-transition": "workspace:^"
   }

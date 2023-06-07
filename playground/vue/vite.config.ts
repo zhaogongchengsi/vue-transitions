@@ -18,14 +18,11 @@ import Shiki from 'markdown-it-shiki'
 import VueMacros from 'unplugin-vue-macros/vite'
 import WebfontDownload from 'vite-plugin-webfont-dl'
 
-export default defineConfig(({ mode }) => {
-  const isPro = mode === 'production'
-
+export default defineConfig(() => {
   return {
     resolve: {
       alias: {
         '~/': `${path.resolve(__dirname, 'src')}/`,
-        '@zrook/vue-transitions': path.resolve(__dirname, !isPro ? '../../packages/vue/src/index.ts' : '../../packages/vue/dist/es/index.js'),
       },
     },
 

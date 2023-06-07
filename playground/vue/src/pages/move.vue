@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { Move } from '@zrook/vue-transitions'
-
 defineOptions({
   name: 'IndexPage',
 })

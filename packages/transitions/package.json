@@ -13,7 +13,8 @@
   "bugs": "https://github.com/zhaogongchengsi/vue-transitions/issues",
   "scripts": {
     "dev": "postcss src/index.css src/**/*.css -w --base src --dir dist",
-    "build": "postcss src/index.css src/**/*.css --base src --dir dist",
+    "build": "vt build -v ./vite.config.ts -c none",
+    "build:css": "postcss src/index.css src/**/*.css --base src --dir dist",
     "prepublishOnly": "npm run build",
     "release": "npm publish --access public"
   },
@@ -30,5 +31,9 @@
   },
   "sideEffects": [
     "*.css"
-  ]
+  ],
+  "devDependencies": {
+    "@zrook/vue-transitions-fade": "workspace:^",
+    "@zrook/vue-transitions-move": "workspace:^"
+  }
 }

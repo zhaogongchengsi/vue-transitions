@@ -4,6 +4,7 @@
   "description": "Vue transition animation library",
   "main": "dist/index.mjs",
   "scripts": {
+    "build": "vt build -v ./vite.config.ts -c none",
     "prepublishOnly": "npm run build",
     "release": "npm publish --access public"
   },
@@ -25,6 +26,18 @@
   "files": [
     "dist"
   ],
+  "devDependencies": {
+    "@zrook/vue-transitions-fade": "workspace:^",
+    "@zrook/vue-transitions-move": "workspace:^"
+  },
+  "exports": {
+    ".": {
+      "import":"./dist/index.mjs",
+      "default":"./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./style": "./dist/style.css"
+  },
   "sideEffects": [
     "dist/*",
     "*.css"

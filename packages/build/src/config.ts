@@ -1,7 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 import vue from '@vitejs/plugin-vue'
-import Components from 'unplugin-vue-components/vite'
 import VueMacros from 'unplugin-vue-macros/vite'
 import ei from 'postcss-easy-import'
 import af from 'autoprefixer'
@@ -11,7 +10,12 @@ import psm from 'postcss-selector-matches'
 import pp from 'postcss-pseudo-is'
 import psp from 'postcss-selector-prefixer'
 
-export function getConfig({ root, outDir }: { root: string; outDir: string }) {
+export function getConfig({ root, outDir, watch, cssPrefix }: { root: string; outDir: string; watch: boolean; cssPrefix: string }) {
+  const postcssPlugin = [ei, af, pn, pu, psm, pp]
+
+  if (cssPrefix !== 'none' && cssPrefix.trim() !== '')
+    postcssPlugin.push(psp({ prefix: cssPrefix }))
+
   return {
     root,
     build: {
@@ -48,18 +52,16 @@ export function getConfig({ root, outDir }: { root: string; outDir: string }) {
           },
         ],
       },
+      watch: watch ? {} : null,
     },
 
     css: {
       postcss: {
-        plugins: [ei, af, pn, pu, psm, pp, psp({ prefix: 'zrook-' })],
+        plugins: postcssPlugin,
       },
     },
 
     plugins: [
-      Components({
-        dts: true,
-      }),
       VueMacros({
         plugins: {
           vue: vue({
