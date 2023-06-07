@@ -1,10 +1,11 @@
 <script setup lang='ts'>
 import { computed } from 'vue'
-import ZrookTransition from '@zrook/vue-base-transition'
+import { useName } from '../hooks'
 
 interface MoveProps {
   reverse?: boolean
   direction?: 'x' | 'y'
+  group?: boolean
 }
 
 const props = withDefaults(defineProps<MoveProps>(), {
@@ -17,12 +18,12 @@ defineOptions({
 })
 
 const name = computed(() => {
-  return `move-${props.direction}`
+  return useName(`move-${props.direction}`, props.reverse)
 })
 </script>
 
 <template>
-  <ZrookTransition :name="name" v-bind="props" :duration="3">
+  <Transition :name="name" v-bind="props">
     <slot />
-  </ZrookTransition>
+  </Transition>
 </template>

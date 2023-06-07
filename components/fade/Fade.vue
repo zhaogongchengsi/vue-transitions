@@ -1,13 +1,15 @@
 <script setup lang='ts'>
-import ZrookTransition from '@zrook/vue-base-transition'
+import { useName } from '../hooks'
 
 defineOptions({
   name: 'Fade',
 })
+
+const name = useName('fade')
 </script>
 
 <template>
-  <ZrookTransition name="fade" :reverse="false">
+  <Transition :name="name">
     <slot />
-  </ZrookTransition>
+  </Transition>
 </template>
