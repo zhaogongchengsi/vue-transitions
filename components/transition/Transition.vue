@@ -29,15 +29,20 @@ export default defineComponent({
       return ns.join('-')
     })
 
+    const onBeforeEnter = () => {
+      console.log('123')
+    }
+
     return {
       name,
+      onBeforeEnter,
     }
   },
 })
 </script>
 
 <template>
-  <Transition :name="name">
+  <Transition :name="name" @before-enter="onBeforeEnter">
     <slot />
   </Transition>
 </template>

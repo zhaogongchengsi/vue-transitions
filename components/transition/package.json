@@ -5,7 +5,8 @@
   "description": "",
   "main": "dist/es/index.mjs",
   "scripts": {
-    "build": "vt build -v ./vite.config.ts"
+    "build": "vt build -v ./vite.config.ts",
+    "dev": "vt dev -v ./vite.config.ts"
   },
   "types": "./dist/index.d.ts",
   "exports": {

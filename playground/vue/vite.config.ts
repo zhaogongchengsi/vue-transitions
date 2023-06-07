@@ -19,10 +19,20 @@ import VueMacros from 'unplugin-vue-macros/vite'
 import WebfontDownload from 'vite-plugin-webfont-dl'
 
 export default defineConfig(() => {
+  const components = ['fade', 'move'].map(name => ({ [`@zrook/vue-transitions-${name}`]: path.resolve(__dirname, `../../components/${name}/index.ts` ) }))
+
+  const alias = {}
+  for (const item of components)
+    Object.assign(alias, item)
+
   return {
     resolve: {
       alias: {
         '~/': `${path.resolve(__dirname, 'src')}/`,
+        '@zrook/vue-base-transition': path.resolve(__dirname, '../../components/transition/index.ts'),
+        // '@zrook/vue-transitions-fade': path.resolve(__dirname, '../../components/fade/index.ts'),
+        // '@zrook/vue-transitions-move': path.resolve(__dirname, '../../components/move/index.ts'),
+        ...alias,
       },
     },
 

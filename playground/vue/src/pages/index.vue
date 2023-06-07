@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Fade } from '@zrook/vue-transitions'
+import Fade from '@zrook/vue-transitions-fade'
 
 defineOptions({
   name: 'IndexPage',
