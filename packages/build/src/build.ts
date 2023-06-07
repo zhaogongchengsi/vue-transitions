@@ -2,7 +2,7 @@ import { join } from 'node:path'
 import { build, loadConfigFromFile, mergeConfig } from 'vite'
 import { getConfig } from './config'
 import { scanDirs } from './scan'
-import { clearFolder, dirname } from './utils'
+import { clearFolder, dirname, readJson } from './utils'
 import type { CLIOption } from './commands/options'
 
 const mode = 'production'
@@ -20,6 +20,8 @@ export async function buildComponent(root: string, { viteConfig, outDir, isDev, 
   if (!loadConfig)
     throw new Error(`配置文件获取失败(Configuration file acquisition failed), 根目录为: ${root}`)
 
+  const pkg = await readJson(join(root, 'package.json'))
+
   clearFolder(outDir)
-  await build(mergeConfig(getConfig({ root, outDir, watch: isDev, cssPrefix }), loadConfig.config, false))
+  await build(mergeConfig(getConfig({ root, outDir, watch: isDev, cssPrefix, packageJson: pkg }), loadConfig.config, false))
 }
