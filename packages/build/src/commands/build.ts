@@ -17,7 +17,7 @@ export const build = defineCommand({
   async run({ args }) {
     const opt = args as unknown as CLIOption
     const root = process.cwd()
-    consola.start(`开始打包 ${isAll(opt.name as string) ? '所有' : opt.name}`)
+    consola.start('开始打包...')
     try {
       isAll(opt.name as string) ? await buildAllComponent(root, opt) : await buildComponent(root, opt)
       consola.success('打包成功')

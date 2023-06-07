@@ -3,10 +3,10 @@
   --zrook-transition-function: ease;
 }
 
-.fade-enter-active,.fade-leave-active {
+.zrook-fade-enter-active,.zrook-fade-leave-active {
   transition: opacity var(--zrook-transition-duration) var(--zrook-transition-function);
 }
 
-.fade-enter-from,.fade-leave-to {
+.zrook-fade-enter-from,.zrook-fade-leave-to {
   opacity: 0;
 }

@@ -17,9 +17,16 @@ import Shiki from 'markdown-it-shiki'
 // @ts-expect-error failed to resolve types
 import VueMacros from 'unplugin-vue-macros/vite'
 import WebfontDownload from 'vite-plugin-webfont-dl'
+import af from 'autoprefixer'
+import pn from 'postcss-nested'
 
 export default defineConfig(() => {
-  const components = ['fade', 'move'].map(name => ({ [`@zrook/vue-transitions-${name}`]: path.resolve(__dirname, `../../components/${name}/index.ts` ) }))
+  const components = ['fade', 'move'].map((name) => {
+    return {
+      [`@zrook/vue-transitions-${name}`]: path.resolve(__dirname, `../../components/${name}/index.ts`),
+      [`#zrook/vue-transitions-${name}/style`]: path.resolve(__dirname, `../../components/${name}/index.css`),
+    }
+  })
 
   const alias = {}
   for (const item of components)
@@ -30,9 +37,13 @@ export default defineConfig(() => {
       alias: {
         '~/': `${path.resolve(__dirname, 'src')}/`,
         '@zrook/vue-base-transition': path.resolve(__dirname, '../../components/transition/index.ts'),
-        // '@zrook/vue-transitions-fade': path.resolve(__dirname, '../../components/fade/index.ts'),
-        // '@zrook/vue-transitions-move': path.resolve(__dirname, '../../components/move/index.ts'),
         ...alias,
+      },
+    },
+
+    css: {
+      postcss: {
+        plugins: [af, pn],
       },
     },
 

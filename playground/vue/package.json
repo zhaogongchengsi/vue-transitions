@@ -67,6 +67,17 @@
     "vite-ssg": "^0.22.2",
     "vite-ssg-sitemap": "^0.5.1",
     "vitest": "^0.31.1",
-    "vue-tsc": "^1.6.5"
+    "vue-tsc": "^1.6.5",
+    "cssnano": "^6.0.1",
+    "postcss": "^8.4.24",
+    "postcss-cli": "^10.1.0",
+    "postcss-easy-import": "^4.0.0",
+    "postcss-import": "^15.1.0",
+    "postcss-nested": "^6.0.1",
+    "postcss-nested-import": "^1.0.0",
+    "postcss-pseudo-is": "^0.3.0",
+    "postcss-selector-matches": "^4.0.0",
+    "postcss-selector-prefixer": "^1.0.2",
+    "postcss-utilities": "^0.8.4"
   }
 }

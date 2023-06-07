@@ -2,13 +2,8 @@ import { join } from 'node:path'
 import vue from '@vitejs/plugin-vue'
 
 import VueMacros from 'unplugin-vue-macros/vite'
-import ei from 'postcss-easy-import'
 import af from 'autoprefixer'
 import pn from 'postcss-nested'
-import pu from 'postcss-utilities'
-import psm from 'postcss-selector-matches'
-import pp from 'postcss-pseudo-is'
-import psp from 'postcss-selector-prefixer'
 import dts from 'vite-plugin-dts'
 
 export interface GetConfigOption {
@@ -23,14 +18,10 @@ function capitalizeFirstLetter(str: string) {
   return str.charAt(0).toUpperCase() + str.slice(1)
 }
 
-export function getConfig({ root, outDir, watch, cssPrefix, packageJson }: GetConfigOption) {
-  const postcssPlugin = [ei, af, pn, pu, psm, pp]
+export function getConfig({ root, outDir, watch, packageJson }: GetConfigOption) {
   const { name } = packageJson
 
   const umdName = (name.slice(name.lastIndexOf('/') + 1) as string).split('-').map(s => capitalizeFirstLetter(s)).join('')
-
-  if (cssPrefix !== 'none' && cssPrefix.trim() !== '')
-    postcssPlugin.push(psp({ prefix: cssPrefix }))
 
   return {
     root,
@@ -74,7 +65,7 @@ export function getConfig({ root, outDir, watch, cssPrefix, packageJson }: GetCo
 
     css: {
       postcss: {
-        plugins: postcssPlugin,
+        plugins: [af, pn],
       },
     },
 
