@@ -1,7 +1,11 @@
 <script lang='ts'>
-import { computed, defineComponent } from 'vue'
+import { Transition, TransitionGroup, computed, defineComponent } from 'vue'
 
 export default defineComponent({
+  components: {
+    Transition,
+    TransitionGroup,
+  },
   props: {
     name: {
       type: String,
@@ -12,12 +16,16 @@ export default defineComponent({
       required: true,
     },
     duration: {
-      type: Number,
+      type: [Number, Object],
       default: 0.3,
     },
     function: {
       type: String,
       default: 'ease',
+    },
+    group: {
+      type: Boolean,
+      required: false,
     },
   },
   setup(props) {
@@ -29,20 +37,19 @@ export default defineComponent({
       return ns.join('-')
     })
 
-    const onBeforeEnter = () => {
-      console.log('123')
-    }
+    const transitionComponent = computed(() => props.group ? 'TransitionGroup ' : 'Transition')
 
     return {
       name,
-      onBeforeEnter,
+      transitionComponent,
+      duration: props.duration,
     }
   },
 })
 </script>
 
 <template>
-  <Transition :name="name" @before-enter="onBeforeEnter">
+  <component :is="transitionComponent" :name="name">
     <slot />
-  </Transition>
+  </component>
 </template>

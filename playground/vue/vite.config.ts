@@ -21,23 +21,23 @@ import af from 'autoprefixer'
 import pn from 'postcss-nested'
 
 export default defineConfig(() => {
-  const components = ['fade', 'move'].map((name) => {
-    return {
-      [`@zrook/vue-transitions-${name}`]: path.resolve(__dirname, `../../components/${name}/index.ts`),
-      [`#zrook/vue-transitions-${name}/style`]: path.resolve(__dirname, `../../components/${name}/index.css`),
-    }
-  })
+  // const components = ['fade', 'move'].map((name) => {
+  //   return {
+  //     [`@zrook/vue-transitions-${name}`]: path.resolve(__dirname, `../../components/${name}/index.ts`),
+  //     [`#zrook/vue-transitions-${name}/style`]: path.resolve(__dirname, `../../components/${name}/index.css`),
+  //   }
+  // })
 
-  const alias = {}
-  for (const item of components)
-    Object.assign(alias, item)
+  // const alias = {}
+  // for (const item of components)
+  //   Object.assign(alias, item)
 
   return {
     resolve: {
       alias: {
         '~/': `${path.resolve(__dirname, 'src')}/`,
         '@zrook/vue-base-transition': path.resolve(__dirname, '../../components/transition/index.ts'),
-        ...alias,
+        '#/': `${path.resolve(__dirname, '../../components')}/`,
       },
     },
 

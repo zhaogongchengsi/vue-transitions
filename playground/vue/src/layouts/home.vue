@@ -32,25 +32,40 @@ const menus = computed(() => {
 
 <template>
   <div class="h-screen w-full flex">
-    <div class="h-screen w-70 flex flex-col border-r-1 border-black/30 dark:border-white/40">
-      <div class="flex items-center border-b-1 border-black/30 p-3 dark:border-white/40">
-        <button icon-btn :title="t('button.toggle_dark')" @click="toggleDark()">
-          <div i="carbon-sun dark:carbon-moon" />
-        </button>
+    <div class="h-screen w-70 flex flex-col border-r-1 a-border-color dark:border-white/40">
+      <div class="flex items-center justify-between border-b-1 a-border-color p-3 dark:border-white/40 h-15">
+        <div @click="router.push('/')" icon-btn class="w-8 h-8" i-tabler-home />
+        <div @click="router.back()" icon-btn class="i-tabler-arrow-back-up w-8 h-8" />
       </div>
-      <ul class="flex-1 divide-y">
-        <li v-for="(item, index) of menus" :key="index" class="hover:bg-slate-200/40">
-          <RouterLink icon-btn :to="item.path" class="w-full px-2 py-3">
+      <ul class="flex-1 flex flex-col gap-2 p-2">
+        <li v-for="(item, index) of menus" :key="index" class=" h-12">
+          <RouterLink :to="item.path" class="w-full h-full flex items-center px-2 rounded-lg"
+            hover="router-link_hover_active" active-class="router-link_hover_active">
             <div class="flex items-center gap-3">
-              <div :class="item.icon" class="h-5 w-5" />
-              <span>{{ item.title || "未知的名字" }}</span>
+              <div :class="item.icon" class="h-6 w-6" />
+              <span class="text-5">{{ item.title || "未知的名字" }}</span>
             </div>
           </RouterLink>
         </li>
       </ul>
     </div>
-    <main flex-1 px-4 py-10 text="center gray-700 dark:gray-200">
-      <RouterView />
+    <main flex-1 class="flex flex-col h-screen">
+      <header class="h-15 border-b-1 a-border-color flex items-center px-5">
+
+        <button icon-btn i="tabler-sun dark:tabler-moon" class="w-8! h-8! ml-auto" :title="t('button.toggle_dark')" @click="toggleDark()" />
+
+        <a href="https://github.com/zhaogongchengsi/vue-transitions" target="_blank"  class="flex items-center justify-center ml-5"> <div icon-btn class="w-8 h-8" i="tabler-brand-github"  /> </a>
+
+      </header>
+      <div class="flex-1">
+        <RouterView />
+      </div>
     </main>
   </div>
 </template>
+
+<style>
+.router-link_hover_active {
+  @apply ring-1 ring-purple-500 bg-white text-purple-500 dark: bg-slate-700 dark:text-white
+}
+</style>

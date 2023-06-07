@@ -28,8 +28,9 @@
     "paths": {
       "~/*": ["src/*"],
       "@zrook/vue-base-transition": ["../../components/transition"],
-      "@zrook/vue-transitions-fade": ["../../components/fade"],
-      "@zrook/vue-transitions-move": ["../../components/move"],
+      // "@zrook/vue-transitions-fade": ["../../components/fade"],
+      // "@zrook/vue-transitions-move": ["../../components/move"],
+      "#/*": ["../../components/*"]
     }
   },
   "vueCompilerOptions": {

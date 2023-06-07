@@ -22,7 +22,7 @@ const name = computed(() => {
 </script>
 
 <template>
-  <ZrookTransition :name="name" v-bind="props">
+  <ZrookTransition :name="name" v-bind="props" :duration="3">
     <slot />
   </ZrookTransition>
 </template>
