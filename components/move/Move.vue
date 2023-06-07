@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import ZrookTransition from '@zrook/vue-base-transition'
 
-interface MoveProps extends Transition {
+interface MoveProps {
   reverse?: boolean
   direction?: 'x' | 'y'
 }

@@ -1,5 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
+import { join } from 'node:path'
 import vue from '@vitejs/plugin-vue'
 import VueMacros from 'unplugin-vue-macros/vite'
 import ei from 'postcss-easy-import'
@@ -9,6 +10,7 @@ import pu from 'postcss-utilities'
 import psm from 'postcss-selector-matches'
 import pp from 'postcss-pseudo-is'
 import psp from 'postcss-selector-prefixer'
+import dts from 'vite-plugin-dts'
 
 export function getConfig({ root, outDir, watch, cssPrefix }: { root: string; outDir: string; watch: boolean; cssPrefix: string }) {
   const postcssPlugin = [ei, af, pn, pu, psm, pp]
@@ -68,6 +70,13 @@ export function getConfig({ root, outDir, watch, cssPrefix }: { root: string; ou
             include: [/\.vue$/],
           }),
         },
+      }),
+      dts({
+        root,
+        cleanVueFileName: true,
+        staticImport: true,
+        entryRoot: root,
+        tsConfigFilePath: join(root, 'tsconfig.json'),
       }),
     ],
   }

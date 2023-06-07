@@ -30,11 +30,13 @@
     "@zrook/vue-transitions-fade": "workspace:^",
     "@zrook/vue-transitions-move": "workspace:^"
   },
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import":"./dist/index.mjs",
       "default":"./dist/index.mjs",
-      "require": "./dist/index.js"
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
     },
     "./style": "./dist/style.css"
   },

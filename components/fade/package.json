@@ -14,19 +14,17 @@
   "files": [
     "dist"
   ],
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import":"./dist/index.mjs",
-      "default":"./dist/index.mjs",
-      "require": "./dist/index.js"
+      "import": "./dist/index.mjs",
+      "default": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
     },
     "./style": "./dist/style.css"
   },
   "license": "MIT",
-  "devDependencies": {
-    "consola": "^3.1.0",
-    "esno": "^0.16.3"
-  },
   "sideEffects": [
     "dist/*",
     "*.css"

@@ -3,6 +3,7 @@
     "baseUrl": ".",
     "module": "ESNext",
     "target": "ESNext",
+    "rootDir": ".",
     "lib": ["DOM", "ESNext"],
     "strict": true,
     "esModuleInterop": true,
@@ -14,10 +15,7 @@
     "noUnusedLocals": true,
     "strictNullChecks": true,
     "allowJs": true,
-    "forceConsistentCasingInFileNames": true,
-    "paths": {
-      "@zrook/vue-base-transition":["./transition/index.ts"],
-    }
+    "forceConsistentCasingInFileNames": true
   },
-  "exclude": ["dist", "node_modules"]
+  "exclude": ["node_modules"]
 }

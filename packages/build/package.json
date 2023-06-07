@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "private": "true",
   "scripts": {
     "build": "unbuild",
     "dev": "unbuild --stub",
@@ -32,6 +33,7 @@
     "postcss-selector-prefixer": "^1.0.2",
     "postcss-utilities": "^0.8.4",
     "unbuild": "^1.2.1",
-    "unplugin-vue-macros": "^2.2.1"
+    "unplugin-vue-macros": "^2.2.1",
+    "vite-plugin-dts": "^2.3.0"
   }
 }
