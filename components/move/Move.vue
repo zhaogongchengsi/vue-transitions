@@ -1,11 +1,10 @@
 <script setup lang='ts'>
 import { computed } from 'vue'
-import { useName } from '../hooks'
+import { useName } from '../shared/hooks'
 
 interface MoveProps {
   reverse?: boolean
   direction?: 'x' | 'y'
-  group?: boolean
 }
 
 const props = withDefaults(defineProps<MoveProps>(), {

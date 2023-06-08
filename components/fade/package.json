@@ -1,16 +1,30 @@
 {
-  "name": "@zrook/vue-transitions-fade",
-  "version": "0.0.0",
-  "private": "true",
-  "description": "",
-  "main": "./dist/index.mjs",
-  "module": "./dist/index.mjs",
+  "name": "@zrook/vue-transition-fade",
+  "version": "0.0.1",
+  "description": "A fading animation component based on vue3",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
   "scripts": {
     "build": "vt build -v ./vite.config.ts",
-    "dev": "vt dev -v ./vite.config.ts"
+    "dev": "vt dev -v ./vite.config.ts",
+    "prepublishOnly": "npm run build",
+    "release": "npm publish --access public"
   },
-  "keywords": [],
-  "author": "",
+  "author": "zhaogongchengsi <zzhhaon@163.com>",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/zhaogongchengsi",
+  "homepage": "https://github.com/zhaogongchengsi/vue-transitions",
+  "bugs": "https://github.com/zhaogongchengsi/vue-transitions/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhaogongchengsi/vue-transitions.git"
+  },
+  "keywords": [
+    "vue-transitions",
+    "vue",
+    "transition",
+    "animation"
+  ],
   "files": [
     "dist"
   ],
@@ -20,16 +34,18 @@
       "import": "./dist/index.js",
       "default": "./dist/index.umd.js",
       "require": "./dist/index.cjs",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/index.d.ts",
+      "index.js.map": "./dist/index.js.map",
+      "index.cjs.map": "./dist/index.cjs.map",
+      "index.umd.js.map": "./dist/index.umd.js.map"
     },
     "./style": "./dist/style.css"
   },
-  "license": "MIT",
   "sideEffects": [
     "dist/*",
     "*.css"
   ],
   "dependencies": {
-    "@zrook/vue-base-transition": "workspace:^"
+    "@zrook/vue-transition-shared": "workspace:^"
   }
 }

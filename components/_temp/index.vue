@@ -2,10 +2,10 @@
 import { useName } from '../shared/hooks'
 
 defineOptions({
-  name: 'Fade',
+  name: 'temp',
 })
 
-const name = useName('fade')
+const name = useName('temp')
 </script>
 
 <template>

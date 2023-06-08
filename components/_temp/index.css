@@ -1,0 +1,12 @@
+:root {
+  --zrook-transition-duration: 0.3s;
+  --zrook-transition-function: ease;
+}
+
+.zrook-fade-enter-active,.zrook-fade-leave-active {
+  transition: opacity var(--zrook-transition-duration) var(--zrook-transition-function);
+}
+
+.zrook-fade-enter-from,.zrook-fade-leave-to {
+  opacity: 0;
+}

@@ -1,6 +1,6 @@
 import { join } from 'node:path'
 import { readFile } from 'node:fs/promises'
-import { readdirSync, rmdirSync, statSync, unlinkSync } from 'node:fs'
+import { existsSync, readdirSync, rmdirSync, statSync, unlinkSync } from 'node:fs'
 import { normalizePath } from 'vite'
 
 export function dirname(path: string) {
@@ -19,6 +19,9 @@ export async function readJson(path: string) {
 }
 
 export function clearFolder(folderPath: string) {
+  if (!existsSync(folderPath))
+    return
+
   const files = readdirSync(folderPath)
   files.forEach((file) => {
     const filePath = join(folderPath, file)

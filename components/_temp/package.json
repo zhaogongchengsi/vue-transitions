@@ -1,7 +1,7 @@
 {
-  "name": "@zrook/vue-transition-move",
-  "version": "0.0.1",
-  "description": "A mobile animation component based on vue3",
+  "name": "@zrook/vue-transition-temp",
+  "version": "0.0.0",
+  "description": "",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "scripts": {

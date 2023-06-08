@@ -1,10 +1,12 @@
 {
-  "name": "@zrook/vue-transitions",
+  "name": "@zrook/vue-transition-shared",
   "version": "0.0.1",
-  "description": "Vue transition animation library",
-  "main": "dist/index.mjs",
+  "description": "private use",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
   "scripts": {
-    "build": "vt build -v ./vite.config.ts -c none",
+    "build": "vt build -v ./vite.config.ts",
+    "dev": "vt dev -v ./vite.config.ts",
     "prepublishOnly": "npm run build",
     "release": "npm publish --access public"
   },
@@ -26,22 +28,19 @@
   "files": [
     "dist"
   ],
-  "devDependencies": {
-    "@zrook/vue-transitions-fade": "workspace:^",
-    "@zrook/vue-transitions-move": "workspace:^"
-  },
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import":"./dist/index.mjs",
-      "default":"./dist/index.mjs",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    },
-    "./style": "./dist/style.css"
+      "import": "./dist/index.js",
+      "default": "./dist/index.umd.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts",
+      "index.js.map": "./dist/index.js.map",
+      "index.cjs.map": "./dist/index.cjs.map",
+      "index.umd.js.map": "./dist/index.umd.js.map"
+    }
   },
   "sideEffects": [
-    "dist/*",
-    "*.css"
+    "dist/*"
   ]
 }
